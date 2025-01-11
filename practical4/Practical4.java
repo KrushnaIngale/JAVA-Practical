@@ -4,7 +4,7 @@ public class Practical4{
     System.out.println(obj.getByte(-129));
     System.out.println(obj.getShort(-32769));
     System.out.println(obj.getNumber(32769,"shOrt"));
-    System.out.println(obj.toXXString("B1010","x"));
+    System.out.println(obj.toXXString("B1010","d"));
 	}
 	int getByte(int num){
         int byteValue;

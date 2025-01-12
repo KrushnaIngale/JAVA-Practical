@@ -4,7 +4,7 @@ public class Practical4{
     System.out.println(obj.getByte(-129));
     System.out.println(obj.getShort(-32769));
     System.out.println(obj.getNumber(32769,"shOrt"));
-    System.out.println(obj.toXXString("B1010","d"));
+    System.out.println(obj.toXXString("H25","d"));
 	}
 	int getByte(int num){
         int byteValue;
@@ -75,7 +75,7 @@ public class Practical4{
         }else if (toBase.equalsIgnoreCase("O")){
             result = "O" + fromDecimal(decimalValue, 8); 
         }else if (toBase.equalsIgnoreCase("H")){
-            result = "H" + fromDecimal(decimalValue, 16);
+            result = "Ox" + fromDecimal(decimalValue, 16);
         }else if (toBase.equalsIgnoreCase("D")) {
             result = "D" + fromDecimal(decimalValue, 10);
         }else{

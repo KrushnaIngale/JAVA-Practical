@@ -1,5 +1,4 @@
 public class Practical5{
-  static int index;
   public static void main(String args[]){
   
   Practical5 f = new Practical5();
@@ -7,7 +6,7 @@ public class Practical5{
   System.out.println(f.factorial3(4));
   System.out.println(f.factorial3(4));
   
-  int[] num={1,2,3,4,-10};
+  int[] num={1,2,3,4,-10,37};
   System.out.println(f.getSum(num));
   //f.getSum(num);
   }
@@ -54,15 +53,12 @@ public class Practical5{
   }
   
   int getSum(int[] num){
-    index=num.length-1;
-    return getSum1(num,index);
+    return getSum1(num,num.length-1,0);
   }
   
-  int getSum1(int[] num,int index){
-    int sum=0;
+  int getSum1(int[] num,int index,int sum){
     if(index>-1){
-      sum=sum+num[index];
-      return sum+getSum1(num,index-1);
+      return getSum1(num,index-1,sum+num[index]);
     } 
     return sum;
   }

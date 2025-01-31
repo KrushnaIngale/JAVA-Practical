@@ -10,7 +10,9 @@ public class Practical7{
     }else if(size>18){
       size=18;
     }
+    
     String pattern="";
+    
     for(int ln=1;ln<=size;ln++){
       if(size%2==0){
         pattern+=displayK(ln,size+1);

@@ -4,7 +4,7 @@ static int i=2;
     Practical6 obj=new Practical6();
     obj.displayPattern1(4);
     obj.displayPattern2(4);
-    obj.displayPattern3(3);
+    obj.displayPattern3(4);
   }
   void displayPattern1(int size){
     for(int ln=1;ln<=size;ln++){

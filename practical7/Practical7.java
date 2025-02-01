@@ -24,11 +24,7 @@ public class Practical7{
       pattern+=displayS(ln,size);
       pattern+=displayH(ln,size);
       pattern+=displayN(ln,size);
-      if(size%2==0){
-        pattern+=displayA(ln,size);
-      }else{
-        pattern+=displayA(ln,size+1);
-      }
+      pattern+=displayA(ln,size);
     }
    return pattern;
     //System.out.println();
@@ -247,7 +243,7 @@ public class Practical7{
       return pattern;
   }
   
-  String displayA(int ln,int size){
+  String displayA1(int ln,int size){
     String pattern="";
     //for(int ln=1;ln<=size;ln++){
       if(ln<size/2){
@@ -298,6 +294,26 @@ public class Practical7{
       return pattern+="\n";
   }
   //}
+  
+  String displayA(int ln,int size){
+    String pattern="";
+    for(int pt=1;pt<size;pt++){
+      if(ln==1){
+        if(pt>1&&pt<size-1){
+          pattern+="+";
+        }else{
+          pattern+=" ";
+        }
+      }else{
+        if(pt==1||pt==size-1||ln==size/2+1){
+          pattern+="+";
+        }else{
+          pattern+=" ";
+        }
+      }
+    }pattern+=" ";
+    return pattern+"\n";
+  }
 }
 
       

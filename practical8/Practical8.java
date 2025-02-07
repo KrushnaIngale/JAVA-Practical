@@ -5,7 +5,9 @@ public class Practical8{
     System.out.println();
     obj.printPt2(3,1);
     System.out.println();
-    obj.printPt3(7);
+    obj.printPt3(5);
+    System.out.println();
+    obj.displayPattern(3,1);
   }
   //question 1
   void printPt1(int size,int ln){
@@ -35,7 +37,7 @@ public class Practical8{
       System.out.println();
       printPt2(size,ln+1);
       printSpace2(size,ln);
-      printStar2(ln,1,"\\");
+      printStar2(ln,1,"/");
       System.out.println();
     }
     if(ln==size+1){
@@ -111,6 +113,47 @@ public class Practical8{
     }else if(space==size/2+1){
       System.out.print("+");
       System.out.println();
+    }
+  }
+  
+  //question 4 extra
+  void displayPattern(int size,int ln){
+    if(ln<=size+1){
+      printSpace(size,ln);
+      printPt(ln,1);
+      System.out.println();
+      displayPattern(size,ln+1);
+      printSpace(size,ln);
+      printPt4(ln,1);
+      System.out.println();
+    }
+  }
+  void printSpace(int size,int ln){
+    if(ln<=size){
+      System.out.print(" ");
+      printSpace(size,ln+1);
+    }
+  }
+  void printPt(int ln,int pt){
+    if(pt<=2*ln-1){
+      if(ln%2==1){
+        System.out.print("*");
+        printPt(ln,pt+1);
+      }else{
+        System.out.print("/");
+        printPt(ln,pt+1);
+      }
+    }
+  }
+  void printPt4(int ln,int pt){
+    if(pt<=2*ln-1){
+      if(ln%2==1){
+        System.out.print("/");
+        printPt4(ln,pt+1);
+      }else{
+        System.out.print("*");
+        printPt4(ln,pt+1);
+      }
     }
   }
 }

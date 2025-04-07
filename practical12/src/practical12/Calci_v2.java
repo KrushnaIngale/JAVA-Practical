@@ -420,12 +420,12 @@ public class Calci_v2 extends javax.swing.JFrame {
 //        }
         
         String expr=OutputScreen.getText();
-        String[] n=expr.replaceAll("\\s","").split("[\\D+]");
-        String operator = expr.replaceAll("\\s","").replaceAll("[0-9]", "");
+        String[] n=expr.replaceAll("\\s","").split("[^0-9.]+");
+        String operator = expr.replaceAll("\\s","").replaceAll("[0-9.]", "");
         
-        int[] numbers = new int[n.length];
+        Double[] numbers = new Double[n.length];
         for (int i = 0; i < n.length; i++) {
-           numbers[i] = Integer.parseInt(n[i]); 
+           numbers[i] = Double.parseDouble(n[i]); 
         }
         for (int i = 0; i < operator.length(); i++) {
             if (operator.charAt(i) == '*' || operator.charAt(i) == '/') {
@@ -438,7 +438,7 @@ public class Calci_v2 extends javax.swing.JFrame {
             }
         }
         
-        int result = numbers[0];
+        double result = numbers[0];
         for (int i = 0; i < operator.length(); i++) {
             if (operator.charAt(i) == '+') {
                 result += numbers[i + 1];
